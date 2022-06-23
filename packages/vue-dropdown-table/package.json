@@ -1,0 +1,14 @@
+{
+  "name": "vue-dropdown-table",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@surely-vue/table": "^2.4.0",
+    "@packages/vue-popper-gl": "workspace:1.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  }
+}

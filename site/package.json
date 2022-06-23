@@ -1,0 +1,13 @@
+{
+  "name": "site",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@packages/vue-popper-gl": "workspace:1.0.0"
+  }
+}

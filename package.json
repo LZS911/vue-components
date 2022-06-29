@@ -5,9 +5,9 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@libs/core": "workspace:1.0.0",
-    "@libs/directives": "workspace:1.0.0",
-    "@libs/utils": "workspace:1.0.0",
+    "@libs/core": "workspace:*",
+    "@libs/directives": "workspace:*",
+    "@libs/utils": "workspace:*",
     "@vue/babel-plugin-jsx": "^1.0.6",
     "@vue/shared": "^3.1.1",
     "@vue/test-utils": "^2.0.0-rc.7",
@@ -48,7 +48,7 @@
     "test:2": "jest packages/vue-dropdown-table",
     "test:3": "jest packages/vue-infinite-loading",
     "test:4": "jest packages/vue-popper",
-    "build:4": "tsc packages/vue-popper/src/index.tsx",
+    "build:4": "vite build packages/vue-popper",
     "start:site": "vite site",
     "build:site": "vue-tsc site --noEmit && vite build site"
   },

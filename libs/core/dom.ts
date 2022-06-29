@@ -54,10 +54,10 @@ const setBottomOrTop = (
   position?: PlacementEnum
 ) => {
   if (model === PlacementEnum.Bottom) {
-    current.top = parent.top + sizeObj.height + 10;
+    current.top = parent.top + sizeObj.height + 16;
     addClass($(currentDom), `${cls}__${ARROW_BOTTOM} ${cls}__${ARROW_BOTTOM}__${arrowOffset}`);
   } else if (model === PlacementEnum.Top) {
-    current.top = parent.top - sizeObj.height - currentHeight - 10;
+    current.top = parent.top - sizeObj.height - 30;
     addClass($(currentDom), `${cls}__${ARROW_TOP} ${cls}__${ARROW_TOP}__${arrowOffset}`);
   }
   if (position === PlacementEnum.Left) {
@@ -82,10 +82,10 @@ const setLeftOrRight = (
   position?: PlacementEnum
 ) => {
   if (model === PlacementEnum.Left) {
-    current.left = parent.left - currentWidth - 30;
+    current.left = parent.left - currentWidth - 10;
     addClass($(currentDom), `${cls}__${ARROW_LEFT} ${cls}__${ARROW_LEFT}__${arrowOffset}`);
   } else if (model === PlacementEnum.Right) {
-    current.left = parent.left + sizeObj.width + 20;
+    current.left = parent.left + sizeObj.width + 10;
     addClass($(currentDom), `${cls}__${ARROW_RIGHT} ${cls}__${ARROW_RIGHT}__${arrowOffset}`);
   }
   if (position === PlacementEnum.Top) {
@@ -93,7 +93,7 @@ const setLeftOrRight = (
   } else if (position === PlacementEnum.Bottom) {
     current.top = parent.top + sizeObj.height;
   } else {
-    current.top = parent.top + sizeObj.height / 2 - currentHeight / 2;
+    current.top = parent.top + sizeObj.height - 16;
   }
 };
 

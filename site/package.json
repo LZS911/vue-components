@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@packages/vue-popper-gl": "workspace:1.0.0"
+    "@packages/vue-popper-gl": "workspace:*",
+    "vue-router": "^4.0.8"
   }
 }

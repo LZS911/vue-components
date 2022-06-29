@@ -7,9 +7,9 @@ importers:
       '@babel/plugin-proposal-class-properties': ^7.17.12
       '@babel/preset-env': ^7.18.2
       '@babel/preset-typescript': ^7.17.12
-      '@libs/core': workspace:1.0.0
-      '@libs/directives': workspace:1.0.0
-      '@libs/utils': workspace:1.0.0
+      '@libs/core': workspace:*
+      '@libs/directives': workspace:*
+      '@libs/utils': workspace:*
       '@types/jest': ^26.0.23
       '@types/lodash': ^4.14.182
       '@vitejs/plugin-vue': ^2.3.3
@@ -83,8 +83,10 @@ importers:
 
   packages/vue-dropdown-table:
     specifiers:
+      '@packages/vue-popper-gl': workspace:1.0.0
       '@surely-vue/table': ^2.4.0
     dependencies:
+      '@packages/vue-popper-gl': link:../vue-popper
       '@surely-vue/table': 2.4.0_2hkgrcjpuwyqzi5vxan6ub6y2a
 
   packages/vue-infinite-loading:
@@ -95,9 +97,11 @@ importers:
 
   site:
     specifiers:
-      '@packages/vue-popper-gl': workspace:1.0.0
+      '@packages/vue-popper-gl': workspace:*
+      vue-router: ^4.0.8
     dependencies:
       '@packages/vue-popper-gl': link:../packages/vue-popper
+      vue-router: 4.0.16_vue@3.2.37
 
 packages:
 
@@ -1879,6 +1883,10 @@ packages:
       '@vue/compiler-dom': 3.2.37
       '@vue/shared': 3.2.37
 
+  /@vue/devtools-api/6.1.4:
+    resolution: {integrity: sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==}
+    dev: false
+
   /@vue/reactivity-transform/3.2.37:
     resolution: {integrity: sha512-IWopkKEb+8qpu/1eMKVeXrK0NLw9HicGviJzhJDEyfxTR9e1WtpnnbYkJWurX6WwoFP0sz10xQg8yL8lgskAZg==}
     dependencies:
@@ -2704,11 +2712,13 @@ packages:
 
   /core-js-pure/3.23.2:
     resolution: {integrity: sha512-t6u7H4Ff/yZNk+zqTr74UjCcZ3k8ApBryeLLV4rYQd9aF3gqmjjGjjR44ENfeBMH8VVvSynIjAJ0mUuFhzQtrA==}
+    deprecated: core-js-pure@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
     dev: true
 
   /core-js/3.23.2:
     resolution: {integrity: sha512-ELJOWxNrJfOH/WK4VJ3Qd+fOqZuOuDNDJz0xG6Bt4mGg2eO/UT9CljCrbqDGovjLKUrGajEEBcoTOc0w+yBYeQ==}
+    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
     dev: false
 
@@ -6646,6 +6656,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-router/4.0.16_vue@3.2.37:
+    resolution: {integrity: sha512-JcO7cb8QJLBWE+DfxGUL3xUDOae/8nhM1KVdnudadTAORbuxIC/xAydC5Zr/VLHUDQi1ppuTF5/rjBGzgzrJNA==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      vue: 3.2.37
+    dev: false
 
   /vue-tsc/0.34.17_typescript@4.7.3:
     resolution: {integrity: sha512-jzUXky44ZLHC4daaJag7FQr3idlPYN719/K1eObGljz5KaS2UnVGTU/XSYCd7d6ampYYg4OsyalbHyJIxV0aEQ==}

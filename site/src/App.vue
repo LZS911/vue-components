@@ -1,41 +1,61 @@
-<script setup lang="ts">
-import VuePopperGl from '@packages/vue-popper-gl'
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="main">
-    <VuePopperGl>
-      <template #trigger>
-        <div>test123312312</div>
-      </template>
-
-      <template #default>
-        <div>1233112312</div>
-        <div>1233112312</div>
-        <div>1233112312</div>
-      </template>
-
-    </VuePopperGl>
+  <div id="app">
+    <router-link to="/popper">popper</router-link>
+    <router-view />
   </div>
-
 </template>
 
 <style lang="scss">
-@import '@packages/vue-popper-gl/styles/popper/index.scss';
-
-
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.red-text {
+  color: red;
 }
+.blue-text {
+  color: #1890ff;
+}
+.orange-text {
+  color: orange;
+}
+#app {
+  .box-wrapper {
+    border: 1px solid #eee;
+    margin: 20px;
+    width: 25%;
+    padding: 30px;
+    overflow: scroll;
+  }
 
-.main {
-  height: 1000px;
+  .box-line {
+    margin-top: 20px;
+    border: 1px solid rgba(214, 204, 204, 0.5);
+  }
+
+  .box-title {
+    margin-top: 6px;
+    font-size: 14px;
+  }
+  .box-desc {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  button {
+    color: #fff;
+    border: 0;
+    background: #1890ff;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+    outline: 0;
+    line-height: 1.5715;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px 4px;
+  }
 }
 </style>

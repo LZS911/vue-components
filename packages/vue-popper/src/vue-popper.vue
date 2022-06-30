@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { usePopper } from './userPopper';
-import { defaultProps, emitData, IPropsOptions } from './index.data';
+import { defaultProps, emitData } from './index.data';
 import { clickOutSide as vClickoutside } from '@libs/directives';
+import { IPropsOptions } from './index.type';
 
 const props = defineProps(defaultProps);
 const emits = defineEmits(emitData);

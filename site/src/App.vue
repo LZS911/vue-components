@@ -3,6 +3,7 @@
 <template>
   <div id="app">
     <router-link to="/popper">popper</router-link>
+    <router-link to="/dropdown">dropdown</router-link>
     <router-view />
   </div>
 </template>
@@ -18,6 +19,8 @@
   color: orange;
 }
 #app {
+  height: 800px;
+
   .box-wrapper {
     border: 1px solid #eee;
     margin: 20px;

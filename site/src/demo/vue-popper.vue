@@ -165,6 +165,5 @@ const visibleManualModeClick = () => {
 .main {
   display: flex;
   flex-wrap: wrap;
-  height: 800px;
 }
 </style>

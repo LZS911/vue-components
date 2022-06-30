@@ -3,28 +3,6 @@ import { ArrowOffsetType, PlacementType, TriggerActionType } from '@libs/core';
 
 const DEFAULT_TRIGGER = 'hover';
 
-export interface IPropsOptions {
-  arrowOffset: ArrowOffsetType;
-  appendBody: boolean;
-  autoClose: number;
-  content: string;
-  class: string;
-  disabled: boolean;
-  style: Object;
-  hideAfter: number;
-  manualMode: boolean;
-  offset: number;
-  placement: PlacementType;
-  showArrow: boolean;
-  transition: string;
-  trigger: TriggerActionType;
-  visible: boolean;
-  popperWidth?: number;
-  popperHeight?: number;
-  modelValue?: boolean;
-  boundariesPadding: number;
-}
-
 export const emitData = ['focus', 'blur', 'onChange', 'update:modelValue', 'visible-change', 'update:visible'];
 
 export const defaultProps = {

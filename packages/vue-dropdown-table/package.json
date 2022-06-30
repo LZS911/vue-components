@@ -1,14 +1,12 @@
 {
-  "name": "vue-dropdown-table",
+  "name": "@packages/vue-dropdown-table-gl",
   "private": true,
   "version": "1.0.0",
+  "main": "src/index.ts",
   "dependencies": {
-    "@surely-vue/table": "^2.4.0",
-    "@packages/vue-popper-gl": "workspace:1.0.0"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "@packages/vue-popper-gl": "workspace:*",
+    "element-plus": "^2.2.6",
+    "unplugin-auto-import": "^0.9.2",
+    "unplugin-vue-components": "^0.20.1"
   }
 }

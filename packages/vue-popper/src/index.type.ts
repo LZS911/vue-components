@@ -1,3 +1,4 @@
+import { ArrowOffsetType, PlacementType, TriggerActionType } from '@libs/core';
 import { Slot } from 'vue';
 
 export interface IEventHandle {
@@ -31,3 +32,25 @@ export type InternalSlots = {
 };
 
 export type EmitType = 'update:visible' | 'visible-change';
+
+export interface IPropsOptions {
+  arrowOffset: ArrowOffsetType;
+  appendBody: boolean;
+  autoClose: number;
+  content: string;
+  class: string;
+  disabled: boolean;
+  style: Object;
+  hideAfter: number;
+  manualMode: boolean;
+  offset: number;
+  placement: PlacementType;
+  showArrow: boolean;
+  transition: string;
+  trigger: TriggerActionType;
+  visible: boolean;
+  popperWidth?: number;
+  popperHeight?: number;
+  modelValue?: boolean;
+  boundariesPadding: number;
+}

@@ -1,12 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import { VuePopperDemo } from '../demo';
+import { VuePopperDemo, VueDropdownTableDemo } from '../demo';
 
 const routes = [
   {
     path: '/',
     redirect: '/popper'
   },
-  { path: '/popper', component: VuePopperDemo }
+  { path: '/popper', component: VuePopperDemo },
+  { path: '/dropdown', component: VueDropdownTableDemo }
 ];
 
 const router = createRouter({

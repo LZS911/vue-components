@@ -1,4 +1,4 @@
-import { isHTMLElement, on } from '@libs/utils';
+import { isFunction, isHTMLElement, on, throwError } from '@libs/utils';
 import { DirectiveBinding, ObjectDirective } from 'vue';
 
 type DocumentHandler = <T extends MouseEvent>(mouseup: T, mousedown: T) => void;
@@ -33,6 +33,9 @@ const createDocumentHandler = (el: HTMLElement, binding: DirectiveBinding): Docu
     const isIncludes = includes.some((item) => item.contains(mouseUpTarget) || item.contains(mouseDownTarget));
 
     if (isContainedByEl || isSelf || isIncludes) return;
+    if (!isFunction(binding.value)) {
+      throwError('clickOutSide', 'binding value is not a function');
+    }
     binding.value();
   };
 };

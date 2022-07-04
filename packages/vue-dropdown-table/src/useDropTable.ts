@@ -1,3 +1,4 @@
+import { useVirtualList } from '@libs/core';
 import {
   EMPTY_STR,
   FOCUS_EVENT,
@@ -121,6 +122,8 @@ export default function useDropTable(props: ILyDropTableProps, emit: (event: str
 
   /**  disabled  visibility  hide or show  placeholder =================================================================================== */
 
+  const { list, containerProps, wrapperProps } = useVirtualList(filterList, { overscan: 5, itemHeight: 40 });
+  /** virtual list ================================================================================================== */
   watch(
     () => props.tableList,
     () => {
@@ -306,12 +309,14 @@ export default function useDropTable(props: ILyDropTableProps, emit: (event: str
     setRow,
     currentRowClick,
     columnList,
-    filterList,
+    list,
     filterMethod,
     tableRef,
     dropLabel,
     showOrHideEvent,
     SwitchEnum,
-    wrapperHovering
+    wrapperHovering,
+    containerProps,
+    wrapperProps
   };
 }

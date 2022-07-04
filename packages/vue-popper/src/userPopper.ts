@@ -7,10 +7,9 @@ import {
   getDomLength,
   usePositionByParent
 } from '@libs/utils';
-import { IPropsOptions } from './index.data';
 import { TriggerActionType } from '@libs/core';
 import { ref, Ref, onMounted, computed } from 'vue';
-import { IEventHandle } from './index.type';
+import type { IEventHandle, IPropsOptions } from './index.type';
 
 export function usePopper(props: IPropsOptions, emit: (event: string, ...args: any[]) => void) {
   const triggerRef = ref<Ref<HTMLElement>>(null as any);

@@ -1,32 +1,19 @@
 import { ARROW_BOTTOM, ARROW_TOP, ARROW_LEFT, ARROW_RIGHT } from '@libs/utils/constants';
-import type { PlacementType, ArrowOffsetType } from './index.d';
+import type { PlacementType, ArrowOffsetType, IPosition } from './index.type';
 import { Ref } from 'vue';
 import { $, throwError } from '@libs/utils';
 import { isObject } from 'lodash';
 import { camelize } from '@vue/shared';
-
-export enum PlacementEnum {
-  Bottom = 'bottom',
-  Left = 'left',
-  Top = 'top',
-  Right = 'right'
-}
-
-export interface IPosition {
-  top: number;
-  left: number;
-  bottom: number;
-  right: number;
-}
+import { PlacementEnum } from './index.enum';
 
 export const on = (
   element: HTMLElement | Document | Window,
   event: string,
   handler: EventListenerOrEventListenerObject,
-  useCapture = false
+  options: AddEventListenerOptions = { passive: false }
 ): void => {
   if (element && event && handler) {
-    element.addEventListener(event, handler, useCapture);
+    element.addEventListener(event, handler, options);
   }
 };
 
@@ -34,10 +21,10 @@ export const off = (
   element: HTMLElement | Document | Window,
   event: string,
   handler: EventListenerOrEventListenerObject,
-  useCapture = false
+  options: AddEventListenerOptions = { passive: false }
 ): void => {
   if (element && event && handler) {
-    element.removeEventListener(event, handler, useCapture);
+    element.removeEventListener(event, handler, options);
   }
 };
 

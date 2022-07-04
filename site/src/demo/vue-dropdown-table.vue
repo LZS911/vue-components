@@ -2,21 +2,11 @@
 import VDropdownTable from '@packages/vue-dropdown-table-gl';
 import { ref } from 'vue';
 
-const tableList = [
-  { prgName: 'test0', prgNo: 0, prgUrl: 'adfafjdasfalsfjdalfaj123123213123132131313123131313' },
-  { prgName: 'test1', prgNo: 1, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test2', prgNo: 2, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test3', prgNo: 3, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test4', prgNo: 4, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test5', prgNo: 5, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test6', prgNo: 6, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test7', prgNo: 7, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test8', prgNo: 8, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test9', prgNo: 9, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test10', prgNo: 10, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test11', prgNo: 11, prgUrl: 'adfafjdasfalsfjdalfaj' },
-  { prgName: 'test12', prgNo: 12, prgUrl: 'adfafjdasfalsfjdalfaj' }
-];
+const tableList = Array.from({ length: 1000000 }, (_, i) => ({
+  prgName: `test${i}`,
+  prgNo: i,
+  prgUrl: `adfafjdasfalsfjdalfaj1231232131231321313 +++ ${i}`
+}));
 const columnList = [
   {
     width: 100,

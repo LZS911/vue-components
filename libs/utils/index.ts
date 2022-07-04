@@ -123,3 +123,7 @@ export function allPromiseFinish(promiseList: Promise<FieldError>[]): Promise<Fi
     });
   });
 }
+
+export const transformNaN = (val: number, defaultValue = 0) => {
+  return isNaN(val) ? 0 : val;
+};

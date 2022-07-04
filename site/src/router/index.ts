@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import { VuePopperDemo, VueDropdownTableDemo } from '../demo';
+import { VuePopperDemo, VueDropdownTableDemo, VueDirectivesDemo } from '../demo';
 
 const routes = [
   {
@@ -7,7 +7,8 @@ const routes = [
     redirect: '/popper'
   },
   { path: '/popper', component: VuePopperDemo },
-  { path: '/dropdown', component: VueDropdownTableDemo }
+  { path: '/dropdown', component: VueDropdownTableDemo },
+  { path: '/directives', component: VueDirectivesDemo }
 ];
 
 const router = createRouter({

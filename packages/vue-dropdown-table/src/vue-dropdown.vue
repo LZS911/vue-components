@@ -29,13 +29,15 @@ const {
   setRow,
   currentRowClick,
   columnList,
-  filterList,
+  list,
   filterMethod,
   tableRef,
   dropLabel,
   showOrHideEvent,
   SwitchEnum,
-  wrapperHovering
+  wrapperHovering,
+  containerProps,
+  wrapperProps
 } = useDropTable(props as ILyDropTableProps, emits);
 </script>
 
@@ -81,25 +83,24 @@ const {
     <template #default>
       <teleport to="body" :disabled="!appendToBody">
         <transition :name="transitionName">
-          <div class="ly-table" v-show="visibility" :class="[{ 'ly-table__show': visibility }, tableClass]">
+          <div
+            v-bind="(containerProps as any)"
+            class="ly-table"
+            v-show="visibility"
+            :class="[{ 'ly-table__show': visibility }, tableClass]"
+          >
             <el-table
               :size="props.size"
               ref="tableRef"
-              :data="filterList"
+              :data="list.map((v) => v.data)"
               border
-              :width="1000"
               highlight-current-row
               :header-cell-style="headerCellStyle"
               @row-click="currentRowClick"
               :row-class-name="setMultipleBack"
+              v-bind="wrapperProps"
             >
-              <el-table-column
-                v-for="column in columnList"
-                :key="column.prop"
-                :prop="column.prop"
-                :label="column.label"
-                :width="column.width"
-              />
+              <el-table-column v-for="column in columnList" v-bind="column" />
             </el-table>
           </div>
         </transition>

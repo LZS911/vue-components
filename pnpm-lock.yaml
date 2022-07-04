@@ -103,10 +103,12 @@ importers:
     specifiers:
       '@packages/vue-dropdown-table-gl': workspace:*
       '@packages/vue-popper-gl': workspace:*
+      '@vueuse/core': ^8.7.5
       vue-router: ^4.0.8
     dependencies:
       '@packages/vue-dropdown-table-gl': link:../packages/vue-dropdown-table
       '@packages/vue-popper-gl': link:../packages/vue-popper
+      '@vueuse/core': 8.7.5_vue@3.2.37
       vue-router: 4.0.16_vue@3.2.37
 
 packages:

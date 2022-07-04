@@ -4,6 +4,7 @@
   <div id="app">
     <router-link to="/popper">popper</router-link>
     <router-link to="/dropdown">dropdown</router-link>
+    <router-link to="/directives">directives</router-link>
     <router-view />
   </div>
 </template>

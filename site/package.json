@@ -10,6 +10,7 @@
   "dependencies": {
     "@packages/vue-dropdown-table-gl": "workspace:*",
     "@packages/vue-popper-gl": "workspace:*",
+    "@vueuse/core": "^8.7.5",
     "vue-router": "^4.0.8"
   }
 }

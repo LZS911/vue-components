@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import VDropdownTable from '@packages/vue-dropdown-table-gl';
-import { ref } from 'vue';
+import { nextTick, ref } from 'vue';
 
-const tableList = Array.from({ length: 1000000 }, (_, i) => ({
+const tableList = Array.from({ length: 100000 }, (_, i) => ({
   prgName: `test${i}`,
   prgNo: i,
   prgUrl: `adfafjdasfalsfjdalfaj1231232131231321313 +++ ${i}`
@@ -27,7 +27,9 @@ const columnList = [
 
 const table1 = ref();
 const change = (val: any) => {
-  console.log(val, 'onChange');
+  nextTick(() => {
+    console.log(val, 'onChange', table1.value);
+  });
 };
 </script>
 <template>

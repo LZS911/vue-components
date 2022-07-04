@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useVirtualList } from '@vueuse/core';
+import { useVirtualList } from '@libs/core';
 import { scroll as vScroll } from '@libs/directives';
 import { ref } from 'vue';
 const ref2 = ref();
